@@ -32,13 +32,13 @@ function verifyToken (req,res,next) {
 
   if( typeof(bearerHeader) !== 'undefined') {
 
-    // Authorization başındaki bearer kısmını çıkartıp bir de öyle istek at.
+   
     const bearerArray = bearerHeader.split(" ");
     req.token = bearerArray[1];
     req.message = "Token created succesfully";
     next();
   } else {
-    res.status(403).send({message : "Authorization Fail"}) //message kısmını düzenle
+    res.status(403).send({message : "Authorization Fail"}) 
   }
 
 }
