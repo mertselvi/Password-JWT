@@ -9,11 +9,11 @@ const socketio = require('socket.io')
 const server = http.createServer(app)
 const io = socketio(server)
 const formatMessage = require('../Chat/utils/messages')
-const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require('../Chat/utils/users')   //Fonksiyon isimleri ile aynı olmalı ki aynı fonskiyonu çalıştırsın
+const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require('../Chat/utils/users')
 
 
 //Set Static Folder
-app.use(express.static(path.join(__dirname,'public')))  //Ne sikime yarar bu araştır ?
+app.use(express.static(path.join(__dirname,'public')))  
 
 
 //Run when client connects
@@ -57,7 +57,7 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen (3000, ()=> {            //Neden app yapınca patlıyor bunu öğren
+server.listen (3000, ()=> {            
     console.log('Server connected ')
 })
 
